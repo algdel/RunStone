@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/appback"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:gravity="center"
+    android:alpha="40">
+
+    <LinearLayout android:id="@+id/box_steps"
+        android:orientation="vertical"
+        android:paddingTop="20dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
+
+        <TextView android:id="@+id/step_value"
+            android:textSize="60dp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#0427cc"
+            android:gravity="center_horizontal"
+            android:text=""/>
+        <TextView android:id="@+id/step_units"
+            android:gravity="center_horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#cc4c2d"
+            android:textSize="25dp"
+            android:text="@string/steps" />
+
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/row_1"
+        android:orientation="horizontal" 
+        android:layout_width="fill_parent"
+        android:paddingTop="30dp"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout android:id="@+id/box_distance"
+            android:orientation="vertical"
+            android:layout_width="fill_parent" 
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:paddingBottom="20dp"
+            android:layout_weight="1">
+            
+            <TextView android:id="@+id/distance_value"
+                android:textSize="55dp"
+                android:layout_width="fill_parent" 
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:textColor="#172645"
+                android:text=""/>
+            <TextView android:id="@+id/distance_units"
+                android:gravity="center_horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#cc2538"
+                android:textSize="25dp"
+                android:text="@string/kilometers"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/row_2"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="15dp">
+
+        <LinearLayout android:id="@+id/box_pace"
+            android:orientation="vertical"
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:paddingBottom="10dp"
+            android:layout_weight="1">
+
+            <TextView android:id="@+id/pace_value"
+                android:gravity="center_horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textSize="30dp"
+                android:text=""/>
+            <TextView android:id="@+id/pace_units"
+                android:gravity="center_horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#77121a"
+                android:textSize="@dimen/units"
+                android:text="@string/steps_per_minute"/>
+
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/box_speed"
+            android:orientation="vertical"
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:layout_weight="1">
+
+            <TextView android:id="@+id/speed_value"
+                android:gravity="center_horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textSize="30dp"
+                android:text=""/>
+            <TextView android:id="@+id/speed_units"
+                android:gravity="center_horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#77121a"
+                android:textSize="@dimen/units"
+                android:text="@string/kilometers_per_hour"/>
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/box_calories"
+            android:orientation="vertical"
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:layout_weight="1">
+
+            <TextView android:id="@+id/calories_value"
+                android:gravity="center_horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textSize="30dp"
+                android:text=""/>
+            <TextView android:id="@+id/calories_units"
+                android:gravity="center_horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/units"
+                android:textColor="#77121a"
+                android:text="@string/calories_burned"/>
+                         
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|bottom"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal">
+            <at.markushi.ui.CircleButton
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                app:cb_color="#4eabcc"
+                android:onClick="onClick"
+                android:src="@drawable/zanting"
+                android:id="@+id/control" />
+            <at.markushi.ui.CircleButton
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                app:cb_color="#cc626d"
+                android:onClick="onClick"
+                android:src="@drawable/chongzhi"
+                android:id="@+id/reset"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal">
+            <at.markushi.ui.CircleButton
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                app:cb_color="#33cc34"
+                android:onClick="onClick"
+                android:src="@drawable/shezhi"
+                android:id="@+id/set"/>
+            <at.markushi.ui.CircleButton
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                app:cb_color="#4e5ecc"
+                android:onClick="onClick"
+                android:src="@drawable/tuichu"
+                android:id="@+id/quit"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+
+   
+</LinearLayout>

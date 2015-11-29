@@ -1,0 +1,43 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/mainapp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center"
+    tools:context=".MainActivity" >
+
+
+
+    <at.markushi.ui.CircleButton
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:cb_color="#cc2953"
+        android:src="@drawable/riqi"
+        android:id="@+id/dateButton"
+        app:cb_pressedRingWidth="8dp" />
+
+
+
+    <at.markushi.ui.CircleButton
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:cb_color="#35cc7e"
+        android:src="@drawable/shike"
+        android:id="@+id/timeButton"
+        app:cb_pressedRingWidth="8dp" />
+
+    <net.simonvt.numberpicker.NumberPicker
+        android:id="@+id/np"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <at.markushi.ui.CircleButton
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:cb_color="#5abccc"
+        android:src="@drawable/queding"
+        android:id="@+id/submit"
+        app:cb_pressedRingWidth="8dp" />
+</LinearLayout>

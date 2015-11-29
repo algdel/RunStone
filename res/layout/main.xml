@@ -1,0 +1,76 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/mainapp"
+    android:gravity="center_horizontal"
+    tools:context="com.daimajia.numberprogressbar.example.MainActivity"
+    android:alpha="40">
+
+
+
+    <at.markushi.ui.CircleButton
+        android:layout_width="80dp"
+        android:layout_height="90dp"
+        app:cb_color="#5abccc"
+        android:src="@drawable/lishi"
+        android:id="@+id/history"
+        app:cb_pressedRingWidth="8dp" />
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal">
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:src="@drawable/shezhijuli"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <net.simonvt.numberpicker.NumberPicker
+        android:id="@+id/numberPicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:layout_height="wrap_content">
+        <at.markushi.ui.CircleButton
+            android:layout_width="80dp"
+            android:layout_height="90dp"
+            app:cb_color="#ccb4c8"
+            android:src="@drawable/shinei"
+            android:id="@+id/shinei"
+            app:cb_pressedRingWidth="8dp" />
+        <at.markushi.ui.CircleButton
+            android:layout_width="80dp"
+            android:layout_height="90dp"
+            app:cb_color="#99CC00"
+            android:src="@drawable/shiwai"
+            android:id="@+id/shiwai"
+            app:cb_pressedRingWidth="8dp" />
+    </LinearLayout>
+    <at.markushi.ui.CircleButton
+        android:layout_width="80dp"
+        android:layout_height="90dp"
+        app:cb_color="#643369"
+        android:src="@drawable/jihua"
+        android:id="@+id/planlist"
+        app:cb_pressedRingWidth="8dp" />
+    <at.markushi.ui.CircleButton
+    android:layout_width="80dp"
+    android:layout_height="90dp"
+    app:cb_color="#451a12"
+    android:src="@drawable/yushe"
+    android:id="@+id/btset"
+    app:cb_pressedRingWidth="8dp" />
+</LinearLayout>

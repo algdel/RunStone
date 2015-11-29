@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="btn_bg_en">#7EA43C</color>
+    <color name="btn_bg_pressed">#A82E26</color>
+    <color name="btn_bg_unen">#484848</color>
+
+    <color name="screen_background">#333</color>
+    <color name="display_background">#000</color>
+
+</resources>

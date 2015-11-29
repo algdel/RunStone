@@ -1,0 +1,64 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".MyActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:weightSum="2">
+        <at.markushi.ui.CircleButton
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:cb_color="#99CC00"
+            android:src="@drawable/kaishi"
+            android:id="@+id/btget"
+            app:cb_pressedRingWidth="8dp" />
+        <at.markushi.ui.CircleButton
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:cb_color="#1bccbc"
+            android:src="@drawable/tingzhi"
+            android:id="@+id/btend"
+            app:cb_pressedRingWidth="8dp" />
+        <com.pascalwelsch.holocircularprogressbar.HoloCircularProgressBar
+            android:id="@+id/bar1"
+            android:layout_width="80dp"
+            app:marker_progress="0"
+            app:progress_color="#104435"
+            app:progress_background_color="#cc1757"
+            android:layout_height="80dp"/>
+    </LinearLayout>
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/content"/>
+    <com.daimajia.numberprogressbar.NumberProgressBar
+        android:id="@+id/npb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        custom:progress_unreached_color="#0fccc9"
+        custom:progress_reached_color="#db1515"
+
+        custom:progress_unreached_bar_height="6.75dp"
+        custom:progress_reached_bar_height="4.5dp"
+
+        custom:progress_text_size="20sp"
+        custom:progress_text_color="#3498DB"
+        custom:progress_text_offset="1dp"
+        custom:progress_text_visibility="visible"
+
+        custom:progress_max="100"
+        />
+    <com.baidu.mapapi.map.MapView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/mapview">
+    </com.baidu.mapapi.map.MapView>
+</LinearLayout>
