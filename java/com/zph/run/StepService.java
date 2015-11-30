@@ -1,8 +1,11 @@
 package com.zph.run;
 
+import android.app.Notification;
 import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.app.Service;
 import android.content.BroadcastReceiver;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -51,7 +54,8 @@ public class StepService extends Service {
         super.onCreate();
         
         mNM = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
-        
+        showNotification();
+
         //通过PreferenceManger.getDefaultSharedPreferences(Context context)
         // 方法获取的Prference默认为  <包名>_preferences.xml  MODE为Private
         mSettings = PreferenceManager.getDefaultSharedPreferences(this);
@@ -60,6 +64,7 @@ public class StepService extends Service {
         //这里有两个Preference  一个是设置当中的保存个人身体信息
         // 第二个是Activity状态保存  在onPause结束之后度去上一次状态
         mState = getSharedPreferences("state", 0);
+
 
         mUtils = Utils.getInstance();
         mUtils.setService(this);
@@ -124,6 +129,7 @@ public class StepService extends Service {
         mStateEditor.putFloat("calories", mCalories);
         mStateEditor.commit();
 
+        mNM.cancel(R.string.app_name);
 
         wakeLock.release();
         
@@ -190,6 +196,39 @@ public class StepService extends Service {
         mDistanceNotifier.setDistance(0);
         mSpeedNotifier.setSpeed(0);
         mCaloriesNotifier.setCalories(0);
+    }
+
+    private void showNotification() {
+
+        Intent pedometerIntent = new Intent();
+
+        pedometerIntent.setComponent(new ComponentName(this, Pedometer.class));
+
+
+        PendingIntent contentIntent = PendingIntent.getActivity(this, 0,
+                pedometerIntent, 0);
+
+        pedometerIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+        Notification notification = new Notification.Builder(this)
+
+                .setAutoCancel(true)
+
+                .setContentTitle("RunStone")
+
+                .setContentText("Count your steps")
+
+                .setContentIntent(contentIntent)
+
+                .setSmallIcon(R.drawable.app)
+
+                .setWhen(System.currentTimeMillis())
+
+                .build();
+
+        notification.flags = Notification.FLAG_NO_CLEAR | Notification.FLAG_ONGOING_EVENT;
+
+        mNM.notify(R.string.app_name,notification);
     }
 
     private StepDisplayer.Listener mStepListener = new StepDisplayer.Listener() {
